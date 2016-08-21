@@ -1,0 +1,13 @@
+<h3><%= params[:name].capitalize %></h3>
+
+<p><strong>Email:</strong> <%= @user_info[:email] %></p>
+<p><strong>Interests:</strong>
+<%= @user_info[:interests].join(', ') %>
+</p>
+
+<ul>
+  <% @users.each do |name, info| %>
+    <% next if params[:name] == name.to_s %>
+    <li><a href="/users/<%= name %>"><%= name %></a></li>
+  <% end %>
+</ul>
