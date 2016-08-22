@@ -7,11 +7,9 @@ require 'pry'
 
 helpers do
   def count_interests(users)
-    interests = []
-    users.each do |name, info|
-      interests << info[:interests]
+    users.reduce(0) do |sum, (_name, user)|
+      sum + user[:interests].length
     end
-    interests.flatten.count
   end
 end
 
