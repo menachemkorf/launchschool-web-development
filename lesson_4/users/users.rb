@@ -3,8 +3,6 @@ require "sinatra"
 require "sinatra/reloader"
 require "yaml"
 
-require 'pry'
-
 helpers do
   def count_interests(users)
     users.reduce(0) do |sum, (_name, user)|
